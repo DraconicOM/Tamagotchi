@@ -32,12 +32,12 @@ class Tamagotchi:
         mood = self.health + self.food 
         return mood
 
-nomeB = input('Qual o name que deseja colocar no seu bichinho? ')
-Bichinho = Tamagotchi(name = nomeB)
-while (Bichinho.health > 0) and (Bichinho.food < 100):
-    Bichinho.ChangeFood(+2)
-    Bichinho.ChangeHealth(-2)
-    Bichinho.ChangeAge()
+nomePet = input('Qual o name que deseja colocar no seu Pet? ')
+Pet = Tamagotchi(name = nomePet)
+while (Pet.health > 0) and (Pet.food < 100):
+    Pet.ChangeFood(+2)
+    Pet.ChangeHealth(-2)
+    Pet.ChangeAge()
     resposta = input(f"""\n------------------------------------------\n __         __
 /  \.-" "-./  \.
 \    -   -    /
@@ -45,25 +45,25 @@ while (Bichinho.health > 0) and (Bichinho.food < 100):
  \  .-'''-.  /
   '-\__Y__/-'
      `---`
-     \nOlá meu nome é {Bichinho.name}. O que você deseja fazer comigo agora? \n1- Alimentar (-10 de fome)\n2- Dormir (+10 de saúde)\n3- Mudar meu nome\n4- Visualizar humor\n5- Visualizar idade\n6- Visualizar fome\n7- Visualizar saúde\nResposta: """)
+     \nOlá meu nome é {Pet.name}. O que você deseja fazer comigo agora? \n1- Alimentar (-10 de fome)\n2- Dormir (+10 de saúde)\n3- Mudar meu nome\n4- Visualizar humor\n5- Visualizar idade\n6- Visualizar fome\n7- Visualizar saúde\nResposta: """)
     print('\n')
     if resposta == '1':
-        Bichinho.ChangeFood(-10)
+        Pet.ChangeFood(-10)
         print("-10 de fome! Obrigado!")
     elif resposta == '2':
-        Bichinho.ChangeHealth(+10)
+        Pet.ChangeHealth(+10)
         print("+10 de saúde! Obrigado!")
     elif resposta == '3':
         nome2 = input('Qual nome deseja colocar? \n')
-        Bichinho.ChangeName(nome2)
+        Pet.ChangeName(nome2)
     elif resposta == '4':
-        print("Humor: ", Bichinho.ReturnMood())
+        print("Humor: ", Pet.ReturnMood())
     elif resposta == '5':
-        print("Idade: ", Bichinho.ReturnAge())
+        print("Idade: ", Pet.ReturnAge())
     elif resposta == '6':
-        print("Fome: ", Bichinho.ReturnFood())
+        print("Fome: ", Pet.ReturnFood())
     elif resposta == '7':
-        print("Vida: ", Bichinho.ReturnHealth())
+        print("Vida: ", Pet.ReturnHealth())
     else:
         print('Escolha um número válido!')
 else:
